@@ -4,22 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "node index.js",
     "dev-start": "nodemon index.js"
   },
   "author": "Abdul Moize (amkhan837)",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "jest": "^28.1.3",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
     "async": "^3.2.4",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "html-express-js": "^1.1.1",
-    "http": "^0.0.1-security",
     "https": "^1.0.0"
-  },
-  "type": "module"
+  }
 }

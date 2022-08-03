@@ -1,6 +1,6 @@
-import https from 'https';
+const https = require('https');
 
-export const fetchTitle = (url, onFetchComplete) => {
+const fetchTitle = (url, onFetchComplete) => {
   const [hostname, ...paths] = url.replace(/https?:\/\//, '').split('/');
   const path = `${paths.join('/') && `/${paths.join('/')}`}`;
 
@@ -26,7 +26,9 @@ export const fetchTitle = (url, onFetchComplete) => {
     .end();
 };
 
-export const getUrlTitles = (urls, onFinish) => {
+exports.fetchTitle = fetchTitle;
+
+exports.getUrlTitles = (urls, onFinish) => {
   const addressWithTitles = [];
 
   for (let index = 0; index < urls.length; index++) {
@@ -39,7 +41,7 @@ export const getUrlTitles = (urls, onFinish) => {
   }
 };
 
-export const getUrls = (addresses) => {
+exports.getUrls = (addresses) => {
   if (!addresses) return null;
 
   const urls = typeof addresses === 'string' ? [addresses] : [...addresses];

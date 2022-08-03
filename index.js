@@ -1,21 +1,13 @@
-import express from 'express';
-import htmlExpress from 'html-express-js';
-import { resolve } from 'path';
-import { port } from './config.js';
-import tasks from './routes/tasks.js';
+const express = require('express');
+const { port } = require('./config');
+const tasks = require('./routes/tasks');
 
 const app = express();
-const __dirname = resolve();
-app.engine(
-  'js',
-  htmlExpress({
-    includesDir: 'includes', // where all includes reside
-  })
-);
-app.set('view engine', 'js');
+
+app.set('view engine', 'ejs');
 app.set('views', `${__dirname}/views`);
 app.use('/', tasks);
-app.use('**', (req, res, next) => {
+app.use('*', (req, res) => {
   res.send('<h1>404 Page Not Found</h1>');
 });
 

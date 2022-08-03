@@ -1,5 +1,7 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 
 dotenv.config();
 
-export const port = process.env.PORT;
+module.exports = {
+  port: process.env.PORT,
+}
