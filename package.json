@@ -1,0 +1,24 @@
+{
+  "name": "caremerge-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev-start": "nodemon index.js"
+  },
+  "author": "Abdul Moize (amkhan837)",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.18.1",
+    "html-express-js": "^1.1.1",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0"
+  },
+  "type": "module"
+}
